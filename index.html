@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Complementar 2</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    function valorAConverter() {
+
+        var valor = prompt("Informe a quantia que deseja converter")
+        return parseFloat(valor.replace(",", "."))
+    }
+
+
+    function calcularIof(valor) {
+
+        var taxaIof = 0.011
+        var iofAPagar = valor * taxaIof
+        var totalIof = iofAPagar.toFixed(2)
+        return totalIof
+    }
+
+    function valorAConverterComDescontos(quantia, totalIof) {
+
+        var valorASerConvertidoComDescontos = quantia - totalIof
+        return valorASerConvertidoComDescontos
+
+    }
+
+    function converterParaDolar(converterComDescontos) {
+
+        var taxaDolar = 4.94
+        var convertDolar = converterComDescontos / taxaDolar
+        var dolar = convertDolar.toFixed(2)
+        return dolar
+    }
+
+    function converterParaEuro(converterComDescontos) {
+
+        var taxaEuro = 5.39
+        var convertEuro = converterComDescontos / taxaEuro
+        var euro = convertEuro.toFixed(2)
+        return euro
+    }
+
+
+    function totalAPagar() {
+        console.log("Valor digitado: " + valorParaConverter)
+        console.log("Taxa IOF " + calculoIof)
+        console.log("Valor a ser convertido com descontos: " + converterComDescontos)
+        console.log("Conversão para Dólar: " + conversaoDolar);
+        console.log("Conversão para Euro: " + conversaoEuro);
+    }
+
+
+
+    const valorParaConverter = valorAConverter()
+    const calculoIof = calcularIof(valorParaConverter)
+    const converterComDescontos = valorAConverterComDescontos(valorParaConverter, calculoIof)
+    const conversaoDolar = converterParaDolar(converterComDescontos)
+    const conversaoEuro = converterParaEuro(converterComDescontos)
+
+    totalAPagar()
+
+</script>
